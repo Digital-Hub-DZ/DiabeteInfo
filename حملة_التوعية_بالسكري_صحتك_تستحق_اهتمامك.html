@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حملة التوعية بالسكري | صحتك تستحق اهتمامك</title>
+<style>
+:root{--bg:#fff6f6;--card:#fff;--ink:#2a0d0f;--mute:#7a5457;--pri:#b3191f;--pri2:#8f1218;--acc:#ef4b4b;--line:#f1d3d3;--ok:#1a8f5a;--bad:#b45309;--hero:linear-gradient(160deg,#6e0f12,#b3191f 60%,#ef4b4b);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b0a0c;--card:#2a1114;--ink:#ffecec;--mute:#d1a5a8;--pri:#ff7b7b;--pri2:#b3191f;--acc:#ff7b7b;--line:#5a2327;--ok:#4cd08f;--bad:#ffb45e}}
+:root[data-theme="dark"]{--bg:#1b0a0c;--card:#2a1114;--ink:#ffecec;--mute:#d1a5a8;--pri:#ff7b7b;--pri2:#b3191f;--acc:#ff7b7b;--line:#5a2327;--ok:#4cd08f;--bad:#ffb45e}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;line-height:1.8}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--pri2);z-index:10}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--pri2);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px;overflow-x:auto}
+nav b{white-space:nowrap}nav div{display:flex;gap:14px;font-size:14px}
+nav a{color:#fff;text-decoration:none;white-space:nowrap;opacity:.9}
+.note{background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px;font-size:13px;color:var(--mute);text-align:center}
+.hero{background:var(--hero);color:#fff;text-align:center;padding:64px 20px 72px}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.16);border-radius:99px;padding:4px 16px;font-size:14px}
+.hero h1{font-size:clamp(30px,8vw,52px);margin:18px 0 10px;line-height:1.3}
+.hero p{max-width:560px;margin:0 auto 24px;opacity:.95}
+.btn{display:inline-block;border:0;border-radius:12px;padding:11px 22px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;background:#fff;color:#8f1218;margin:4px}
+.btn.o{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
+.btn.p{background:var(--pri2);color:#fff}
+section{max-width:960px;margin:auto;padding:52px 18px}
+.eyebrow{color:var(--pri);font-size:12px;letter-spacing:2px;font-weight:700;direction:ltr;text-align:right}
+h2{margin:4px 0 8px;font-size:clamp(24px,6vw,34px)}
+.sub{color:var(--mute);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card i{font-style:normal;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--pri2);color:#fff;font-size:20px;margin-bottom:8px}
+.card h3{margin:4px 0;font-size:18px}.card p{margin:0;color:var(--mute);font-size:15px}
+.quiz,.myth{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.meta{display:flex;justify-content:space-between;color:var(--mute);font-size:14px;margin-bottom:8px}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:16px}.bar span{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
+.opt{display:block;width:100%;text-align:right;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;font:inherit;cursor:pointer}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--card))}
+.opt.no{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--card))}
+.exp{margin-top:10px;color:var(--mute);font-size:15px;min-height:28px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.myth h3{font-size:20px;margin:0 0 14px}
+.fact{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:1px solid var(--line);display:none}
+.fact.show{display:block}.fact b{color:var(--pri)}
+.cta{background:var(--hero);color:#fff;text-align:center;border-radius:24px;padding:40px 20px}
+.cta h2{margin-top:0}
+.src a{color:var(--pri);font-weight:700;text-decoration:none}
+footer{text-align:center;color:var(--mute);padding:28px 16px 40px;font-size:14px;border-top:1px solid var(--line)}
+.toast{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);left:50%;transform:translateX(-50%);background:var(--pri2);color:#fff;padding:10px 20px;border-radius:99px;display:none;z-index:20}
+</style>
+</head>
+<body>
+<nav><b>✦ توعية السكري</b><div><a href="#about">عن الحملة</a><a href="#learn">اعرف أكثر</a><a href="#quiz">اختبر معرفتك</a><a href="#myths">خرافة أم حقيقة</a></div></nav>
+<div class="note"><b>تنبيه صحي:</b> هذه المنصة للتوعية العامة ولا تقدم تشخيصاً أو بديلاً عن استشارة الطبيب.</div>
+
+<header class="hero" id="home">
+<span class="tag">❤️ حملة توعوية صحية</span>
+<h1>السكري: اعرفه قبل أن يفاجئك.</h1>
+<p>دليل توعوي لفهم مرض السكري، والتعرّف على أعراضه وعوامل الخطر، وتصحيح المفاهيم الشائعة، وتشجيع الفحص والاستشارة الطبية الواعية.</p>
+<a class="btn" href="#learn">اكتشف الحملة ←</a><a class="btn o" href="#sources">المصادر الطبية</a>
+</header>
+
+<section id="about">
+<div class="eyebrow">ABOUT THE CAMPAIGN</div><h2>المعرفة بداية الاهتمام</h2>
+<p class="sub">معلومة صحية واضحة وموثوقة تساعد الأفراد والعائلات على اتخاذ قرارات أفضل.</p>
+<div class="grid">
+<div class="card"><i>◎</i><h3>وعي علمي</h3><p>معلومات مبسطة مستندة إلى مصادر صحية موثوقة.</p></div>
+<div class="card"><i>♡</i><h3>دعم بلا وصمة</h3><p>التعايش مع السكري ممكن، والدعم الأسري والمجتمعي يصنع فرقاً كبيراً.</p></div>
+<div class="card"><i>↗</i><h3>خطوة واعية</h3><p>فحص سكر الدم ومتابعة الطبيب يكشفان المرض مبكراً ويقللان مضاعفاته.</p></div>
+</div>
+</section>
+
+<section id="learn">
+<div class="eyebrow">KNOW YOUR BODY</div><h2>ماذا ينبغي أن تعرف عن السكري؟</h2>
+<p class="sub">أساسيات تساعدك على الفهم دون تهويل أو تبسيط مخل.</p>
+<div class="grid">
+<div class="card"><i>＋</i><h3>ما السكري؟</h3><p>حالة مزمنة يرتفع فيها سكر الدم لأن الجسم لا ينتج الأنسولين بالقدر الكافي أو لا يستجيب له جيداً.</p></div>
+<div class="card"><i>◐</i><h3>أنواعه</h3><p>النوع الأول مناعي ويحتاج إلى الأنسولين. النوع الثاني هو الأشيع ويرتبط بمقاومة الأنسولين. وهناك سكري الحمل.</p></div>
+<div class="card"><i>!</i><h3>الأعراض</h3><p>عطش شديد، كثرة التبول، تعب، تشوش الرؤية، بطء التئام الجروح، ونقصان وزن غير مبرر. وقد لا تظهر أعراض في البداية.</p></div>
+<div class="card"><i>◷</i><h3>عوامل الخطر</h3><p>زيادة الوزن، قلة الحركة، التاريخ العائلي، التقدم في العمر، وسكري الحمل السابق.</p></div>
+<div class="card"><i>⚕</i><h3>الفحص والمتابعة</h3><p>يُشخَّص بتحاليل مثل سكر الدم الصائم والسكر التراكمي HbA1c. اسأل طبيبك عن الفحص المناسب لك.</p></div>
+<div class="card"><i>♥</i><h3>الوقاية ونمط الحياة</h3><p>نشاط بدني منتظم، غذاء متوازن، وزن صحي. هذا يقلل خطر النوع الثاني ويساعد في التحكم به.</p></div>
+<div class="card"><i>⚠</i><h3>المضاعفات</h3><p>قد يؤثر ارتفاعه المزمن في القلب والكلى والعينين والأعصاب والقدمين، والمتابعة المبكرة تقلل هذه المخاطر.</p></div>
+<div class="card"><i>🚑</i><h3>متى تراجع الطوارئ؟</h3><p>قيء مستمر، تنفس سريع، ارتباك أو نعاس شديد، أو انخفاض سكر مصحوب بإغماء. هذه حالات عاجلة.</p></div>
+</div>
+</section>
+
+<section id="quiz">
+<div class="eyebrow">QUICK CHECK</div><h2>اختبر معلوماتك الصحية</h2>
+<p class="sub">خمسة أسئلة قصيرة. الاختبار يقيس المعرفة فقط، ولا يقيس خطر الإصابة أو حالتك الصحية.</p>
+<div class="quiz" id="qz"></div>
+</section>
+
+<section id="myths">
+<div class="eyebrow">MYTH VS FACT</div><h2>خرافة أم حقيقة؟</h2>
+<p class="sub">اختر إجابتك ثم اطلع على المعلومة العلمية.</p>
+<div class="myth" id="my"></div>
+</section>
+
+<section>
+<div class="cta"><h2>كن جزءاً من التغيير ❤️</h2><p>تعرّف على المعلومات الموثوقة، وشارك رسالة الحملة مع من حولك.</p><button class="btn" id="sh">شارك الحملة</button></div>
+</section>
+
+<section id="sources" class="src">
+<div class="eyebrow">TRUSTED KNOWLEDGE</div><h2>مصادر للمزيد من القراءة</h2>
+<p class="sub">روابط مرجعية للتحقق من المعلومات. ينبغي أن يراجع مختص طبي محلي المحتوى قبل الإطلاق الرسمي.</p>
+<div class="grid">
+<div class="card"><h3>منظمة الصحة العالمية</h3><p>معلومات عامة عن السكري.</p><p><a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank" rel="noopener">زيارة المصدر ↗</a></p></div>
+<div class="card"><h3>الاتحاد الدولي للسكري</h3><p>أرقام ومعلومات وتوعية عالمية.</p><p><a href="https://idf.org/about-diabetes/" target="_blank" rel="noopener">زيارة المصدر ↗</a></p></div>
+<div class="card"><h3>مراكز السيطرة على الأمراض CDC</h3><p>الوقاية والتعايش مع السكري.</p><p><a href="https://www.cdc.gov/diabetes/" target="_blank" rel="noopener">زيارة المصدر ↗</a></p></div>
+</div>
+</section>
+
+<footer>توعية السكري ❤️<br>صحتك تستحق اهتمامك.<br>حملة توعوية رقمية مستقلة</footer>
+<div class="toast" id="ts">تم نسخ الرابط</div>
+
+<script>
+const Q=[
+{q:"ما الهرمون الذي ينظم دخول السكر من الدم إلى الخلايا؟",o:["الأدرينالين","الأنسولين","الكورتيزول"],a:1,e:"الأنسولين يفرزه البنكرياس، وهو يساعد الخلايا على استخدام الغلوكوز."},
+{q:"أي أنواع السكري هو الأكثر انتشاراً؟",o:["النوع الأول","النوع الثاني","سكري الحمل"],a:1,e:"النوع الثاني هو الأشيع، ويرتبط بنمط الحياة والعوامل الوراثية."},
+{q:"أي من التالي من الأعراض الشائعة لارتفاع السكر؟",o:["عطش شديد وكثرة التبول","ازدياد الطول","تحسن حاد في النظر"],a:0,e:"العطش وكثرة التبول والتعب من العلامات الشائعة، وتستدعي فحصاً طبياً."},
+{q:"ما أحد الإجراءات التي تقلل خطر النوع الثاني؟",o:["قلة الحركة","نشاط بدني منتظم ووزن صحي","تخطي الوجبات دائماً"],a:1,e:"النشاط المنتظم والغذاء المتوازن ووزن صحي من أهم عوامل الوقاية."},
+{q:"أي تحليل يعكس متوسط سكر الدم خلال نحو 3 أشهر؟",o:["السكر التراكمي HbA1c","ضغط الدم","تحليل الكوليسترول"],a:0,e:"HbA1c يعطي صورة عن متوسط السكر خلال الأشهر الماضية."}];
+const M=[
+{t:"تناول السكر بكثرة هو السبب الوحيد المباشر للسكري.",v:false,f:"السكري لا ينتج عن السكر وحده. لكن الإفراط في السكريات قد يزيد الوزن، وزيادة الوزن عامل خطر للنوع الثاني، كما تؤثر الوراثة وقلة الحركة."},
+{t:"غياب الأعراض يعني بالضرورة عدم وجود سكري.",v:false,f:"قد يمر النوع الثاني سنوات دون أعراض واضحة. لذلك يوصى بالفحص لمن لديهم عوامل خطر، حسب نصيحة الطبيب."},
+{t:"يمكن للشخص المصاب بالسكري أن يعيش حياة نشيطة وطبيعية.",v:true,f:"مع المتابعة الطبية والتغذية السليمة والنشاط البدني والالتزام بالعلاج، يعيش كثير من المصابين حياة نشطة ومنتجة."},
+{t:"السكري ينتقل بالعدوى من شخص لآخر.",v:false,f:"السكري غير معدٍ. تتدخل فيه عوامل مناعية ووراثية وعوامل نمط الحياة."}];
+const $=id=>document.getElementById(id);
+let i=0,s=0,done=false;
+function qz(){const b=$('qz');
+ if(i>=Q.length){b.innerHTML=`<h3>❤️ أحسنت! أكملت رحلة المعرفة</h3><p>نتيجتك: ${s} من ${Q.length}. هذه النتيجة لقياس المعرفة فقط.</p><button class="btn p" onclick="i=0;s=0;qz()">أعد الاختبار</button>`;return}
+ const x=Q[i];done=false;
+ b.innerHTML=`<div class="meta"><span>السؤال ${i+1} من ${Q.length}</span><span>${s} إجابات صحيحة</span></div><div class="bar"><span style="width:${i/Q.length*100}%"></span></div><h3>${x.q}</h3>`+x.o.map((o,k)=>`<button class="opt" data-k="${k}">${o}</button>`).join('')+`<div class="exp" id="ex"></div><div class="row"><button class="btn p" id="nx" style="display:none">${i==Q.length-1?'النتيجة':'التالي'}</button></div>`;
+ b.querySelectorAll('.opt').forEach(el=>el.onclick=()=>{if(done)return;done=true;const k=+el.dataset.k;
+  if(k==x.a)s++;el.classList.add(k==x.a?'ok':'no');b.querySelectorAll('.opt')[x.a].classList.add('ok');
+  $('ex').textContent=x.e;$('nx').style.display='inline-block';$('nx').onclick=()=>{i++;qz()}});}
+let m=0;
+function my(){const x=M[m];$('my').innerHTML=`<div class="meta"><span>${m+1} / ${M.length}</span></div><h3>${x.t}</h3><div class="row"><button class="btn p" data-v="1">حقيقة</button><button class="btn p" data-v="0">خرافة</button></div><div class="fact" id="ft"></div>`;
+ $('my').querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{const r=(b.dataset.v=="1")==x.v;
+  $('ft').innerHTML=`<b>${r?'إجابة صحيحة ✓':'ليست دقيقة ✗'}</b> — هذه ${x.v?'حقيقة':'خرافة'}.<br>${x.f}<div class="row"><button class="btn p" id="mn">${m<M.length-1?'التالية':'من البداية'}</button></div>`;
+  $('ft').classList.add('show');$('mn').onclick=()=>{m=(m+1)%M.length;my()}});}
+$('sh').onclick=async()=>{const d={title:"حملة التوعية بالسكري",text:"صحتك تستحق اهتمامك: تعرّف على السكري واختبر معلوماتك.",url:location.href};
+ try{if(navigator.share){await navigator.share(d);return}}catch(e){}
+ try{await navigator.clipboard.writeText(d.url);const t=$('ts');t.style.display='block';setTimeout(()=>t.style.display='none',2000)}catch(e){prompt("انسخ الرابط:",d.url)}};
+qz();my();
+</script>
+</body>
+</html>
